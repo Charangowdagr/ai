@@ -37,10 +37,10 @@ def draw_viz(X_train, X_test, y_train, y_test):
     st.pyplot(error_distribution_fig)
 
     # Random Forest Tree visualization
-    st.subheader("Random Forest - Decision Tree Visualization")
-    random_forest_tree_fig = plot_random_forest_tree(model, X_train)
-    print("Plotting Decision Tree.....")
-    st.pyplot(random_forest_tree_fig)
+    # st.subheader("Random Forest - Decision Tree Visualization")
+    # random_forest_tree_fig = plot_random_forest_tree(model, X_train)
+    # print("Plotting Decision Tree.....")
+    # st.pyplot(random_forest_tree_fig)
 
     
 
