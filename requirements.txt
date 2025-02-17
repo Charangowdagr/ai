@@ -1,0 +1,5 @@
+os
+streamlit
+pandas
+scikit-learn
+matplotlib
