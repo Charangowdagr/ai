@@ -57,6 +57,17 @@ if uploaded_file:
         st.write("### Prediction vs Actual Data")
         fig = plot_train_test_predictions(Y_real, Y_pred, date)  # Get the figure from the plot function
         st.pyplot(fig)  
+    
+        # Create a DataFrame to store predicted and actual values
+        predicted_vs_actual = pd.DataFrame({
+            'Actual': Y_real,
+            'Predicted': Y_pred
+        })
+        
+        # Save the comparison DataFrame to a CSV file
+        predicted_vs_actual.to_csv('predicted_vs_actual.csv', index=False)
+        
+        
 
         st.markdown("---")
         # Predict heatwaves
@@ -66,4 +77,8 @@ if uploaded_file:
         st.write(f"**Occurred Heatwaves (2012-2022):** {occurredHeatwave}")
         st.write(f"**Predicted Heatwaves (2012-2022):** {predictedHeatwave}")
         st.write(f"**Heatwave Prediction Accuracy:** {accuracy*100:.2f}%")
+
+        # Display the first few rows of the DataFrame with Streamlit
+        st.write("### Predicted vs Actual Data")
+        st.write(predicted_vs_actual.head())
 
